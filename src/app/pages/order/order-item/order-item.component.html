@@ -1,0 +1,15 @@
+<div class="kms-order-item">
+  <div class="kms-order-item__figure">
+    <img class="kms-order-item__image" [src]="imgUrl" [alt]="title"/>
+  </div>
+  <div class="kms-order-item__content">
+    <h4 class="kms-order-item__title">{{ title }}</h4>
+    <p class="kms-order-item__short-text">{{ description }}</p>
+    <p class="kms-order-item__pricing">
+      <strong class="kms-order-item__price">$ {{ price }}</strong>
+      <span class="kms-order-item__discount">{{ discount }}% OFF</span>
+    </p>
+
+    <button type="button" class="kms-order-item__button" (click)="hanldleBuy()">Buy Now</button>
+  </div>
+</div>

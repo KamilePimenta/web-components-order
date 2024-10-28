@@ -1,1 +1,14 @@
-<p>order page works!</p>
+<div class="kms-order">
+  <div class="kms-order__product-list">
+    <app-order-item
+      *ngFor="let product of productList"
+      class="kms-order__product-item"
+      [id]="product.id"
+      [title]="product.title"
+      [description]="product.description"
+      [imgUrl]="product.imgUrl"
+      [price]="product.price"
+      [discount]="product.discount"
+    ></app-order-item>
+  </div>
+</div>

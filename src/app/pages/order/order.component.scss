@@ -1,0 +1,11 @@
+.kms-order {
+  .kms-order__product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .kms-order__product-item {
+      max-width: calc(25% - 32px);
+    }
+  }
+}

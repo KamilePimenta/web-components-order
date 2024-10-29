@@ -1,6 +1,5 @@
-import { Component, Injector } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { createCustomElement } from '@angular/elements';
 import { OrderComponent } from './pages/order/order.component';
 
 @Component({
@@ -12,11 +11,4 @@ import { OrderComponent } from './pages/order/order.component';
 })
 export class AppComponent {
   title = 'web-components-order';
-
-  constructor( private injector: Injector) {}
-
-  ngDoBootstrap() {
-    const childAppComponent = createCustomElement(AppComponent, {  injector: this.injector });
-    customElements.define('kms-order', childAppComponent);
-  }
 }

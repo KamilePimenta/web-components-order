@@ -15,11 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/web-components-order",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -32,16 +32,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              {
-                "bundleName": "polyfill-webcomp-es5",
-                "input": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
-              },
-              {
-                "bundleName": "polyfill-webcomp",
-                "input": "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js"
-              }
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -56,8 +47,7 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "development": {
               "optimization": false,
@@ -68,7 +58,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "web-components-order:build:production"
@@ -80,13 +70,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "buildTarget": "web-components-order:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
               "zone.js",
@@ -106,8 +96,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "f6e99980-48be-4b1a-96f5-764b891673bd"
   }
 }
